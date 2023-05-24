@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Icon } from "astro-icon";
+---
+
+<Layout title="Nova Memória">
+  <main class="text-gray-200 space-y-4">
+    <a href="/" class="flex items-center gap-2 hover:underline text-sm">
+      <Icon name="ph:arrow-left" class="w-4 h-4" />
+      voltar à timeline
+    </a>
+
+    <section class="flex flex-col gap-2">
+      <div class="flex items-center gap-4 text-sm">
+        <a href="" class="flex items-center gap-2 hover:underline text-sm">
+          <Icon name="ph:image-square" class="w-4 h-4" />
+          Anexar mídia
+        </a>
+        <label for="isPublicCheck">
+          <input type="checkbox" name="isPublicCheck" id="isPublicCheck" />
+          Tornar memória pública
+        </label>
+      </div>
+
+      <textarea
+        name="memoryContent"
+        id="memoryContent"
+        class="bg-transparent resize-none flex-1 outline-none text-lg text-gray-100 placeholder:text-gray-400"
+        placeholder="Fique livre para adicionar fotos, vídeos e relatos sobre essa experiência que você quer lembrar para sempre."
+        rows="10"></textarea>
+    </section>
+  </main>
+</Layout>
