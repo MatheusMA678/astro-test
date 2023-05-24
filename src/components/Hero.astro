@@ -1,0 +1,28 @@
+---
+import { Image } from "@astrojs/image/components";
+import nlwLogo from "../assets/nlw-spacetime-logo.svg";
+---
+
+<section class="space-y-5">
+  <Image
+    src={nlwLogo}
+    alt="Logotipo do NLW Spacetime"
+    width={160}
+    height={48}
+  />
+  <div>
+    <h1 class="text-5xl font-bold leading-snug text-gray-50">
+      Sua cápsula do tempo
+    </h1>
+    <p class="text-lg leading-relaxed">
+      Colecione momentos marcantes da sua jornada e compartilhe (se quiser) com
+      o mundo!
+    </p>
+  </div>
+  <a
+    href="/memories/new"
+    class="inline-block rounded-full bg-green-500 px-5 py-2 font-alt text-sm font-extrabold uppercase leading-tight text-black transition hover:bg-green-400"
+  >
+    cadastrar lembrança
+  </a>
+</section>

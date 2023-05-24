@@ -1,10 +1,10 @@
 ---
 import "@fontsource/roboto";
 import "@fontsource/bai-jamjuree";
-import { Icon } from "astro-icon";
-import { Image } from "@astrojs/image/components";
 
-import nlwLogo from "../assets/nlw-spacetime-logo.svg";
+import SignIn from "../components/SignIn.astro";
+import Hero from "../components/Hero.astro";
+import Copyright from "../components/Copyright.astro";
 
 export interface Props {
 	title: string;
@@ -26,7 +26,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>Spacetime - {title}</title>
 	</head>
-	<body class="bg-gray-900 text-gray-100 min-h-screen grid grid-cols-2">
+	<body class="grid h-screen grid-cols-2 bg-gray-900 text-gray-100">
 		<section
 			class="relative flex flex-col items-start justify-between overflow-hidden border-r border-white/10 bg-stars bg-cover px-28 py-16"
 		>
@@ -39,52 +39,12 @@ const { title } = Astro.props;
 			<!-- Stripes -->
 			<div class="absolute bottom-0 right-2 top-0 w-2 bg-stripes"></div>
 
-			<!-- SignIn -->
-			<a href="" class="flex items-center gap-4 group">
-				<div class="w-10 h-10 p-2 rounded-full bg-gray-400">
-					<Icon name="ph:user" class="w-full h-full text-gray-500" />
-				</div>
-				<p class="text-sm w-[140px] group-hover:text-gray-50 transition">
-					Crie sua conta e salve suas memórias!
-				</p>
-			</a>
-
-			<!-- Hero -->
-			<section class="space-y-5">
-				<Image
-					src={nlwLogo}
-					alt="Logotipo do NLW Spacetime"
-					width={160}
-					height={48}
-				/>
-				<div>
-					<h1 class="font-bold text-5xl text-gray-50 leading-snug">
-						Sua cápsula do tempo
-					</h1>
-					<p class="text-lg leading-relaxed">
-						Colecione momentos marcantes da sua jornada e compartilhe (se
-						quiser) com o mundo!
-					</p>
-				</div>
-				<a
-					href="/memories/new"
-					class="uppercase bg-green-500 rounded-full px-5 py-2 text-sm text-black inline-block font-extrabold font-alt leading-tight hover:bg-green-400 transition"
-				>
-					cadastrar lembrança
-				</a>
-			</section>
-
-			<!-- Copyright -->
-			<footer>
-				<p class="text-sm">
-					Feito com 💜 no NLW da <a
-						href="https://rocketseat.com.br"
-						class="underline">Rocketseat</a
-					>
-				</p>
-			</footer>
+			<!-- Left Content -->
+			<SignIn />
+			<Hero />
+			<Copyright />
 		</section>
-		<section class="flex flex-col bg-stars bg-cover p-16">
+		<section class="flex flex-col bg-stars bg-cover p-16 overflow-y-auto">
 			<slot />
 		</section>
 	</body>

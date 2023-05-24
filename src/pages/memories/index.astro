@@ -1,9 +1,18 @@
 ---
+import { Memories } from "../../components/Memories";
 import Layout from "../../layouts/Layout.astro";
+
+const memories = [
+  {id: 1, content: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique...", date: "24 de maio, 2023"},
+  {id: 2, content: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique...", date: "20 de maio, 2023"},
+  {id: 3, content: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique...", date: "12 de maio, 2023"},
+]
 ---
 
 <Layout title="Memórias">
-  <main>
-    <h1>Memórias</h1>
-  </main>
+  {memories.map(memory => {
+    return (
+      <Memories content={memory.content} date={memory.date} />
+    )
+  })}
 </Layout>
